@@ -1,0 +1,60 @@
+ <div class="jumbotron">
+    <p>Adaptive Replacement Cache</p>
+    <button class="btn btn-success" ng-click="initializeSystem()">Initialize System</button>
+    <p style="font-size:1em;">This will reset and initialize everything!!</p>
+</div>
+
+<div class="wrapper" ng-if="wordMeaningData.length">    
+    <div class="container">
+        <div class="row">
+             <div class="col-md-4 col-sm-4">
+                <h4>Data Table</h4>
+                <table class="table-fill">
+                    <thead>
+                        <tr>
+                        <th class="text-left">Word</th>
+                        <th class="text-left">Meaning</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-hover">
+                        <tr ng-repeat="value in wordMeaningData">
+                        <td class="text-left">{{value.word}}</td>
+                        <td class="text-left">{{value.meaning}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+                <h4>Type your word here</h4>
+                <div class="searchBox">
+                    <center><input id="searchInput" type="text" ng-model="wordToSearch" placeholder="Ex: Cache"></center>
+                </div>
+                <div style="width:100%;height:50px;">                         
+                    <button style="float:right;margin:10px;" class="btn btn-success" ng-click="search(wordToSearch)">Search</button>
+                </div>
+
+                <div style="width:100%"><h6 style="color:red;">{{errorMsg}}</h6></div>
+            </div>
+
+
+            <div class="col-md-4 col-sm-4">
+                <h4>Evicted Data Table</h4>
+                <table class="table-fill">
+                    <thead>
+                        <tr>
+                        <th class="text-left">Word</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-hover">
+                        <tr ng-repeat="key in evictedKeys track by $index">
+                        <td class="text-left">{{key}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

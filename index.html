@@ -1,0 +1,66 @@
+<html ng-app="cacheApp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Employee Information</title>
+        
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/bootstrap.css">
+    </head>
+    <style>
+        .jumbotron{
+            background-color:#4393b9;
+            text-align:center;
+            padding:60px;
+            
+            padding-top:15px;
+            margin-top:-20px;
+        }
+        .jumbotron h2{
+            color:white;
+            font-size:60px;
+            font-weight:200;
+            padding-bottom:0px;
+        }
+        .jumbotron p{
+            margin-top:30px;
+            color:white;
+            font-size:22px;
+            font-weight:200;
+        }
+        .jumbotron h6{
+            color:white;
+        }   
+        .jumbotron button{
+            width:200px;
+            height:45px;
+            font-size:20px;
+        }
+        .searchBox{
+            width:90%;
+            display:block;
+            margin:0 auto;
+        }
+
+        .searchBox input{
+            height:45px;
+            font-size:20px;     
+            outline:0;
+            padding:10px;
+            border-radius:5px;
+            border:5px solid #8E8E8E;
+            width:96%;
+            color:#474747;
+        }
+
+    </style>
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="angular/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="controllers/search.js"></script>
+    <script type="text/javascript" src="services/CacheService.js"></script>    
+    <body>
+       <div ui-view></div>
+    </body>
+</html>
